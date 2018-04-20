@@ -8,7 +8,7 @@ module.exports = {
     },
 
     register: (req, res, next) => {
-        User.register(new User({
+        User.create(new User({
             username: req.body.username,
             email: req.body.email
         }), req.body.password, (err) => {
@@ -18,8 +18,10 @@ module.exports = {
                 })
             }
             res.json({
-                success: 'Sikeres regisztráció'
-            })
+                    success: 'Sikeres regisztráció'
+                },
+                console.log(req.body)
+            )
         });
     },
 
