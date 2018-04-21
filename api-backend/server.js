@@ -81,7 +81,9 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 //User router
-app.use('/', userRouter);
+app.use('/user', userRouter);
+
+//ToDo router
 app.use('/todo', todoRouter);
 
 //Start server
@@ -89,15 +91,15 @@ app.listen(port);
 console.log("It's works on port: " + port);
 
 // Start Browser - Sync
-if (app.get('env') === 'development') {
-    const browserSync = require('browser-sync')
-    const config = {
-        files: ['views/**/*.html'],
-        logLevel: 'info',
-        logSnippet: false,
-        reloadDelay: 3000,
-        reloadOnRestart: true
-    }
-    const bs = browserSync(config)
-    app.use(require('connect-browser-sync')(bs))
-}
+// if (app.get('env') === 'development') {
+//     const browserSync = require('browser-sync')
+//     const config = {
+//         files: ['views/**/*.html'],
+//         logLevel: 'info',
+//         logSnippet: false,
+//         reloadDelay: 3000,
+//         reloadOnRestart: true
+//     }
+//     const bs = browserSync(config)
+//     app.use(require('connect-browser-sync')(bs))
+// }

@@ -2,37 +2,49 @@ const User = require('../models/user.model');
 
 module.exports = {
     getUser: (req, res) => {
-        res.json({
-            user: req.user
-        })
-    },
-
-    register: (req, res, next) => {
-        User.create(new User({
-            username: req.body.username,
-            email: req.body.email
-        }), req.body.password, (err) => {
+        User.findById(req.params.id, (err, post) => {
             if (err) {
-                res.json({
-                    error: err
-                })
+                res.send(err);
             }
-            res.json({
-                    success: 'Sikeres regisztráció'
-                },
-                console.log(req.body)
-            )
+            res.json(post);
         });
     },
 
+    register: (req, res, next) => {
+
+        User.create(req.body, (err, post) => {
+            if (err) {
+                res.send(err);
+                console.log(err);
+            }
+            res.json(post);
+        });
+        console.log(req.body);
+    },
+
     login: (req, res) => {
-        res.json({
-            success: 'Bejelentkezve, mint: ' + req.body.username
-        })
+        User.find({
+            email: req.body.email,
+            password: req.body.password
+        }, (err, post) => {
+            if (err) {
+                res.send(err);
+            }
+            res.json(post)
+        });
     },
 
     logout: (req, res) => {
         req.logout();
         res.redirect('/');
-    }
-}
+    },
+
+    remove: (req, res) => {
+        User.findByIdAndRemove(req.params['_id'], (err, post) => {
+            if (err) {
+                res.send(err);
+            }
+            res.json(post);
+        });
+    },
+};

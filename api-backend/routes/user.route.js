@@ -1,10 +1,19 @@
-const passport = require('passport');
 const userRouter = require('express').Router();
-const User = require('../controller/user.controller');
+const userController = require('../controller/user.controller');
 
-userRouter.get('/', User.getUser);
-userRouter.post('/register', User.register);
-userRouter.post('/login', passport.authenticate('local'), User.login);
-userRouter.get('/logout', User.logout);
+userRouter.route('/:id')
+    .get(userController.getUser);
+
+userRouter.route('/register')
+    .post(userController.register);
+
+userRouter.route('/login')
+    .post(userController.login);
+
+userRouter.route('/logout')
+    .get(userController.logout);
+
+userRouter.route('/delete')
+    .delete(userController.remove);
 
 module.exports = userRouter;

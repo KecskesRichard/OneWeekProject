@@ -1,8 +1,8 @@
 const host = 'localhost'
 const port = 27017
-const user = 'richard'
+const username = 'richard'
 const password = 'yelszo'
-const database = 'scheduleCal'
+const database = 'test'
 
 const options = {
     connectTimeoutMS: 2000,
@@ -14,7 +14,7 @@ const options = {
     bufferMaxEntries: 0
 }
 
-const uri = `mongodb://${user}:${password}@${host}:${port}/${database}?authMechanism=SCRAM-SHA-1`
+const uri = `mongodb://${username}:${password}@${host}:${port}/${database}`
 
 module.exports = {
     uri: uri,
