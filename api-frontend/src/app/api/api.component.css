@@ -1,0 +1,12 @@
+.jumbotron {
+  background: linear-gradient(to left, #DA2431, #B1325F, #804190, #814999);
+  margin: 0;
+  color: white;
+}
+
+.footer {
+  background: rgb(47, 48, 47);
+  color: white;
+  font-size: 12px;
+  padding: 2vh 0 1vh;
+}

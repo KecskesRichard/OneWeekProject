@@ -1,0 +1,26 @@
+.jumbotron {
+  background: linear-gradient(to left, #DA2431, #B1325F, #804190, #814999);
+  margin: 0;
+  color: white;
+}
+
+.map {
+  padding: 5vh 0;
+  background: rgb(47, 48, 47);
+}
+
+.fix {
+  background: rgb(245, 200, 2);
+  padding: 20vh 0;
+}
+
+.fix p {
+  font-size: 20px;
+}
+
+.footer {
+  background: rgb(47, 48, 47);
+  color: white;
+  font-size: 12px;
+  padding: 2vh 0 1vh;
+}

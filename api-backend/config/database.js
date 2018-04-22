@@ -2,7 +2,7 @@ const host = 'localhost'
 const port = 27017
 const username = 'richard'
 const password = 'yelszo'
-const database = 'test'
+const database = 'calendar'
 
 const options = {
     connectTimeoutMS: 2000,

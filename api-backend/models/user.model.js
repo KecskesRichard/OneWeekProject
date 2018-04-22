@@ -12,14 +12,10 @@ const UserSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    password: {
-        type: String,
-        required: true
-    }
-    // duties: [{
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'ToDo'
-    // }]
+    duties: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'ToDo'
+    }]
 }, {
     timestamps: true
 })

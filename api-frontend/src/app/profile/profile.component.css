@@ -1,0 +1,31 @@
+.jumbotron {
+  background: linear-gradient(to left, #DA2431, #B1325F, #804190, #814999);
+  margin: 0;
+  color: white;
+}
+
+.first {
+  background: lightgrey;
+  padding: 10vh 0;
+}
+
+#selfintro {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+}
+
+.fix {
+  background: rgb(245, 200, 2);
+  padding: 20vh 0;
+}
+
+.second {
+  font-size: 30px;
+}
+
+.footer {
+  background: rgb(47, 48, 47);
+  color: white;
+  font-size: 12px;
+  padding: 2vh 0 1vh;
+}

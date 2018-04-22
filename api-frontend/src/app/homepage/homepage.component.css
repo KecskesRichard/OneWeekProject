@@ -1,0 +1,53 @@
+.jumbotron {
+  background: linear-gradient(to left, #DA2431, #B1325F, #804190, #814999);
+  margin: 0;
+  color: white;
+}
+
+.myfirstsection {
+  padding: 20vh 0;
+  background: rgb(255, 217, 0);
+}
+
+.myfirstsection p {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 20px;
+}
+
+.myfirstsection a {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+}
+
+.mysecondsection {
+  padding-top: 5vh;
+  background: url("../../assets/images/yellowroad-logo-gray.png") no-repeat center center;
+  box-shadow: inset 0 0 0 4096px rgba(0, 0, 0, .3);
+  height: 50vh;
+}
+
+.mysecondsection a {
+  margin-top: 35vh;
+}
+
+.mythirdsection {
+  padding: 5vh 0;
+  background: lightgrey;
+}
+
+.card,
+.card-body {
+  background: grey;
+}
+
+.card:hover {
+  box-shadow: 0 0 15px white;
+}
+
+.footer {
+  background: rgb(47, 48, 47);
+  color: white;
+  font-size: 12px;
+  padding: 2vh 0 1vh;
+}

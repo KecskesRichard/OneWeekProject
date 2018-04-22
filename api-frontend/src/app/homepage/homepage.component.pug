@@ -1,0 +1,60 @@
+block content
+  section
+    .jumbotron.jumbotron-fluid
+      .container
+        .col-md-10.offset-1
+          .text-center
+            h1.display-2 Üdvözöllek az oldalon!
+            p.lead Jó hogy itt vagy! Az alábbiakban sok érdekes információt tudhatsz meg a honlapról. 
+              | Vágj bele a lenti gombbal. :)
+            hr
+            a.btn.btn-outline-light.btn-lg(href="#wow" role="button") Belevágás
+  section.myfirstsection#wow
+    .container
+      .col-md-10.offset-1
+        .text-center
+          h2 Az oldalról
+          p Engedd meg, hogy pár szóban felvilágosítsalak a honlapomon elérhető tartalmakról.
+        .text-right
+          h3 
+            a(href="/profile") Profile fül
+          p Azt hiszem magától értetődő, a profile fül alatt az oldal alkotójáról (rólam) tudhatsz meg érdekes dolgokat.
+        h3 
+          a(href="/knowledge") Knowledge fül
+        p Ezt a "mesterművet" egy projekt keretében hoztam létre. A knowledge fül alatt a teremtés során használt technológiákról hintek néhány mondatot.
+        .text-right
+          h3 
+            a(href="/api") API fül
+          p Az API fül alatt találod a feladatom lényegi részét, ami egy határidőnapló-app volt. Kérlek, légy kíméletes...
+        h3 
+          a(href="/contact") Kapcsolat fül
+        p A kapcsolat fül alatt találod az (igazi) elérhetőségeimet.
+  section.mysecondsection
+    .col-md-2.offset-5
+      a.btn.btn-outline-warning.btn-lg.btn-block(href="https://karrierstart.training360.com/" role="button") Yellow-honlap
+  section.mythirdsection
+    .col-8.offset-2.text-center
+      h1 Oktatóink
+      hr
+    .row
+      .col-4.offset-3
+        .card(style="width: 18rem;")
+          img.card-img-top(src="../../assets/images/gergo.jpg" alt="Gergő")
+        .card-body(style="width: 18rem;")
+          h5.card-title Gáll Gergely
+          p
+           | Front-end Guru
+          a.btn.btn-danger(href="https://www.facebook.com/gall.gergely.9") Elérhetőség
+      .col-4
+        .card(style="width: 18rem;")
+          img.card-img-top(src="../../assets/images/jozsi.jpg" alt="Józsi")
+        .card-body(style="width: 18rem;")
+          h5.card-title Cserkó József
+          p
+           | Back-end Mágus
+          a.btn.btn-danger(href="https://www.facebook.com/correct7") Elérhetőség
+
+  section
+    .container-fluid.footer
+      .col-4.offset-4.text-center
+        p &copy; Copyright 2018 ARK Ltd. All rights reserved.

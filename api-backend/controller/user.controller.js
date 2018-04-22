@@ -10,28 +10,35 @@ module.exports = {
         });
     },
 
-    register: (req, res, next) => {
-
-        User.create(req.body, (err, post) => {
+    list: (req, res) => {
+        User.find({}, (err, post) => {
             if (err) {
-                res.send(err);
-                console.log(err);
+                res.send(err)
             }
-            res.json(post);
+            res.json(post)
+        })
+    },
+
+    register: (req, res, next) => {
+        User.register(new User({
+            username: req.body.username,
+            email: req.body.email
+        }), req.body.password, (err) => {
+            if (err) {
+                res.json({
+                    error: err
+                })
+            }
+            res.json({
+                success: 'Registration successful'
+            })
         });
-        console.log(req.body);
     },
 
     login: (req, res) => {
-        User.find({
-            email: req.body.email,
-            password: req.body.password
-        }, (err, post) => {
-            if (err) {
-                res.send(err);
-            }
-            res.json(post)
-        });
+        res.json({
+            succes: 'Logged in as' + ' ' + req.body.username
+        })
     },
 
     logout: (req, res) => {
@@ -40,7 +47,7 @@ module.exports = {
     },
 
     remove: (req, res) => {
-        User.findByIdAndRemove(req.params['_id'], (err, post) => {
+        User.findByIdAndRemove(req.params.id, (err, post) => {
             if (err) {
                 res.send(err);
             }

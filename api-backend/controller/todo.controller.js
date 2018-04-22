@@ -1,7 +1,8 @@
 const ToDo = require('../models/todo.model');
+const User = require('../models/user.model')
 
 module.exports = {
-    getAll: (req, res) => {
+    list: (req, res) => {
         ToDo.find({}, (err, post) => {
             if (err) {
                 res.send(err);
@@ -20,13 +21,24 @@ module.exports = {
     },
 
     create: (req, res) => {
-        ToDo.create(req.body, (err, post) => {
+        ToDo.create(req.body, (err, post1) => {
             if (err) {
-                res.send(err)
+                res.json(err)
             }
-            res.json(post)
+            User.findByIdAndUpdate(req.body.userid, {
+                    $push: {
+                        duties: post1['_id']
+                    }
+                },
+                (err, data) => {
+                    if (err) {
+                        res.json(err)
+                    }
+                    res.json({
+                        success: 'ToDo created'
+                    })
+                })
         })
-        console.log(req.body);
     },
 
     update: (req, res) => {
@@ -40,11 +52,22 @@ module.exports = {
     },
 
     remove: (req, res) => {
-        ToDo.findByIdAndRemove(req.params.id, (err, post) => {
+        ToDo.findByIdAndRemove(req.params.id, (err, post1) => {
             if (err) {
-                res.send(err);
+                res.json(err)
             }
-            res.json(post);
-        });
-    },
+            User.findByIdAndUpdate(req.body.userid, {
+                $pull: {
+                    duties: post1['_id']
+                }
+            }, (err, data) => {
+                if (err) {
+                    res.json(err)
+                }
+                res.json({
+                    success: 'ToDo deleted'
+                })
+            })
+        })
+    }
 };

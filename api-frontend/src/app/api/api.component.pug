@@ -1,0 +1,28 @@
+block content
+  section
+    .jumbotron.jumbotron-fluid
+      .container
+        .col-md-10.offset-1
+          .text-center
+            h1.display-2 API
+            hr
+            p.lead A mestermű maga
+  section
+    .container-fluid
+      .row
+        .col-12(*ngFor="let duty of duties")
+          .card(style="width: 18rem;")
+            .card-body
+              h5.card-title
+                input.form-control(type='text', name='title' ,[(ngModel)]="duty.title")             
+              p.card-text
+                textarea.form-control(name='text' ,[(ngModel)]="duty.text")
+              p.card-text
+                input.form-control(type='text', name='status' ,[(ngModel)]="duty.status")          
+            .card-body.btn-group
+              button.btn.btn-outline-info.my-2.my-sm-0(type="button" ,(click)="update(duty)") Frissítés
+
+  section
+    .container-fluid.footer
+      .col-4.offset-4.text-center
+        p &copy; Copyright 2018 ARK Ltd. All rights reserved.

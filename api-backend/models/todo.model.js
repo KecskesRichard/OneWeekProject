@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-const passportLocalMongoose = require('passport-local-mongoose');
 
 const ToDoSchema = new mongoose.Schema({
     title: {
@@ -8,27 +7,15 @@ const ToDoSchema = new mongoose.Schema({
     },
     text: {
         type: String,
-        required: false
+        required: true
     },
     status: {
         type: String,
         enum: ['new', 'in progress', 'finished'],
         default: 'new'
-    },
-    userId: {
-        type: String,
-        required: true,
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now
-    },
-    udpatedAt: {
-        type: Date,
-        default: Date.now
     }
+}, {
+    timestamps: true
 })
-
-ToDoSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model('ToDo', ToDoSchema)
