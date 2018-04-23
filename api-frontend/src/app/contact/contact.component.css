@@ -1,5 +1,5 @@
 .jumbotron {
-  background: linear-gradient(to left, #DA2431, #B1325F, #804190, #814999);
+  background: linear-gradient(to left, rgb(33, 167, 190), rgb(44, 199, 147), #67d31f, #d1c413);
   margin: 0;
   color: white;
 }
